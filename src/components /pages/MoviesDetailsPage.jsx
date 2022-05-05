@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import {  Link, Route, Routes, useParams } from "react-router-dom";
 import * as movieApi from '../services/MovieAPI';
 import Cast from "./Cast";
+import Reviews from "./Reviews";
 
 // import s from './pages.module.css';
 
@@ -36,14 +37,14 @@ export default function MoviesDetailsPage() {
                     </ul>
                 )}
              <ul>
-                <Link to={`/movies/${movieId}/cast`}>Cast</Link>
-                <li>Reviews</li>
-                </ul>
+                <li><Link to={`/movies/${movieId}/cast`}>Cast</Link></li>
+                <li><Link to={`/movies/${movieId}/reviews`}>Reviews</Link></li>
+            </ul>
             </>
             }
             <Routes>
               <Route path="cast" element={<Cast />} />
-              
+              <Route path="reviews" element={<Reviews />} />
             </Routes>
           
         </>

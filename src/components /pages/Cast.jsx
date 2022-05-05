@@ -16,7 +16,7 @@ import * as movieApi from '../services/MovieAPI';
             <ul>
                 {cast && cast.map(cas => (
                 <li key={cas.id}>
-                     
+                        <img src={cas.profile_path ? `https://www.themoviedb.org/t/p/w185${cas.profile_path}`: <p>Photo</p>} width="100px" /> 
                      <h3 >{cas.name}</h3>
                      <p>Character: {cas.character}</p>
                 </li>))}
