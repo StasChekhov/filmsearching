@@ -2,6 +2,7 @@
 .ulHome {
   list-style: none;
   text-decoration: none;
+  padding-left: 20px;
 }
 .liHome {
   padding: 5px 0;
@@ -11,10 +12,10 @@
   color: rgb(27, 26, 26);
 }
 .linkHome:hover {
-  color: aqua;
+  color: rgb(0, 255, 145);
 }
 .linkHome:visited {
-  color: rgb(92, 201, 41);
+  color: rgb(169, 45, 45);
 }
 /* -----------MoviesPage--------------- */
 .input {
@@ -26,4 +27,53 @@
 .button {
   width: 70px;
   height: 28px;
+}
+.formList {
+  padding-left: 20px;
+}
+.linkMovie {
+  text-decoration: none;
+  color: rgb(27, 26, 26);
+}
+
+.linkMovie:hover {
+  color: rgb(0, 255, 132);
+}
+
+.linkMovie:visited {
+  color: rgb(169, 45, 45);
+}
+
+/* -----------MoviesDetailsPage -----------*/
+.containerMovie {
+  display: flex;
+ 
+}
+
+.filmInformation{
+ padding: 15px;
+}
+
+.genres {
+  display: flex;
+  list-style: none;
+}
+
+.genresLi:not(:first-child){
+  margin-left: 10px;
+}
+
+.additionalInformation{
+  padding: 15px;
+  border: 1px solid grey;
+ 
+}
+.additionalInformation li {
+  margin-top: 7px;
+  margin-left: 15px;
+}
+
+/* -----------Casts----------- */
+.listOfCasts { 
+  padding: 20px;
 }
