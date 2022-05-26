@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, Route, Routes, useNavigate, useParams } from "react-router-dom";
+import { Link, Route, Routes, useLocation, useParams } from "react-router-dom";
 import * as movieApi from "../services/MovieAPI";
 import Cast from "./Cast";
 import Reviews from "./Reviews";
@@ -8,17 +8,22 @@ import s from "./pages.module.css";
 export default function MoviesDetailsPage() {
  const [movie, setMovie] = useState(null);
  const { movieId } = useParams();
- const navigate = useNavigate();
+
+ const location = useLocation();
+ //  const navigate = useNavigate();
 
  useEffect(() => {
   movieApi.fetchMovieDetails(movieId).then(setMovie);
  }, [movieId]);
 
- console.log(movie);
+ // console.log(movie);
+
  return (
   <>
-   <button type="button" onClick={() => navigate("/")}>
-    Back
+   <button type="button">
+    <Link to={location.state.from ?? "/"} className={s.linkMovie}>
+     Back
+    </Link>
    </button>
    {movie && (
     <>
@@ -50,10 +55,20 @@ export default function MoviesDetailsPage() {
      <ul className={s.additionalInformation}>
       Additional information
       <li>
-       <Link to={`/movies/${movieId}/cast`}>Cast</Link>
+       <Link
+        to={`/movies/${movieId}/cast`}
+        state={{ from: location.state.from }}
+       >
+        Cast
+       </Link>
       </li>
       <li>
-       <Link to={`/movies/${movieId}/reviews`}>Reviews</Link>
+       <Link
+        to={`/movies/${movieId}/reviews`}
+        state={{ from: location.state.from }}
+       >
+        Reviews
+       </Link>
       </li>
      </ul>
     </>
