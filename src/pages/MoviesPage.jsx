@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation, useSearchParams } from "react-router-dom";
 
-import * as movieApi from "../services/MovieAPI";
+import * as movieApi from "../components /services/MovieAPI";
 import s from "./pages.module.css";
 
 export default function MoviesPage() {
@@ -36,6 +36,7 @@ export default function MoviesPage() {
      placeholder="Search..."
      value={search}
      onChange={onInputChange}
+     pattern="^[a-zA-Zа-яА-Я]+(([a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
     />
     <button type="submit" className={s.button}>
      Search

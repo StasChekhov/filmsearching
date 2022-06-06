@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import * as movieApi from "../services/MovieAPI";
+import * as movieApi from "../components /services/MovieAPI";
 import s from "./pages.module.css";
 
 export default function Cast() {
@@ -25,6 +25,7 @@ export default function Cast() {
           <p>Photo</p>
          )
         }
+        alt={<p>photo</p>}
         width="100px"
        />
        <h3>{cas.name}</h3>

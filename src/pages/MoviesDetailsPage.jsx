@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, lazy } from "react";
 import { Link, Route, Routes, useLocation, useParams } from "react-router-dom";
-import * as movieApi from "../services/MovieAPI";
-import Cast from "./Cast";
-import Reviews from "./Reviews";
+import * as movieApi from "../components /services/MovieAPI";
 import s from "./pages.module.css";
+
+const Cast = lazy(() => import("./Cast"));
+const Reviews = lazy(() => import("./Reviews"));
 
 export default function MoviesDetailsPage() {
  const [movie, setMovie] = useState(null);
